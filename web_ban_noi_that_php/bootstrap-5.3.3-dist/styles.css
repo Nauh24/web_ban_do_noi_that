@@ -1,0 +1,15 @@
+.my_main_banner {
+    position: relative;
+    background-color: lightblue;
+    height: 300px;
+}
+.my_main_banner .col-md-6 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.my_main_banner .bg-primary {
+    background-color: lightblue !important;
+}

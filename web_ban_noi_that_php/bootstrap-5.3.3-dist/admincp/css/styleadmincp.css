@@ -1,0 +1,29 @@
+ul.admincp_list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+ul.admincp_list li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    border-bottom: 1px solid #E5E5E5;
+}
+.clear{
+    clear: both;
+}
+h3.title_admin {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+    padding: 10px 0;
+    border-bottom: 1px solid #E5E5E5;
+}
+.wrapper {
+    border: 1px solid #E5E5E5;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0;
+    background: #fff;
+}

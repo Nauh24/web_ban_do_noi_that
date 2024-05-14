@@ -1,0 +1,119 @@
+.main_menu .row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.my_main_banner {
+    position: relative;
+    background-color: rgb(47, 128, 156);
+    max-width: 98%;
+    margin: 0 auto;
+    padding: 50px 100px;
+}
+
+.my_main_banner h1 {
+    color: white; /* Thay đổi màu chữ */
+    font-size: 2.5em; /* Tăng kích thước chữ */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Thêm bóng đổ */
+    font-weight: bold; /* Làm chữ đậm */
+}
+.bg-primary {
+    background-color: rgb(47, 128, 156) !important;
+}
+
+.featured_products {
+    position: relative;
+    max-width: 98%;
+    margin: 20px 0 auto;
+}
+
+.product-card {
+    border: 1px solid #ddd; /* Thêm đường viền */
+    padding: 15px; /* Thêm padding */
+    background-color: #f9f9f9; /* Thêm nền màu nhẹ */
+    margin-bottom: 20px; /* Thêm khoảng cách giữa các sản phẩm */
+    border-radius: 5px; /* Làm tròn góc của khung */
+}
+
+.collection {
+    margin-top: 100px; /* Thêm khoảng cách ở phía trên */
+}
+
+.small-button {
+    padding: 5px 10px; /* Giảm padding */
+    font-size: 0.8rem; /* Giảm kích thước chữ */
+}
+.custom-button {
+    max-width: 200px; /* Giới hạn chiều rộng tối đa */
+}
+
+.tab-link {
+    background-color: #f8f9fa; /* Màu nền của nút */
+    color: #343a40; /* Màu chữ của nút */
+    border-radius: 5px; /* Bo góc của nút */
+    margin: 5px; /* Khoảng cách giữa các nút */
+    transition: all 0.3s ease; /* Hiệu ứng chuyển đổi màu sắc */
+}
+
+.tab-link:hover {
+    background-color: #343a40; /* Màu nền của nút khi di chuột qua */
+    color: #f8f9fa; /* Màu chữ của nút khi di chuột qua */
+}
+
+.tab-link.current {
+    background-color: #343a40; /* Màu nền của nút hiện tại */
+    color: #f8f9fa; /* Màu chữ của nút hiện tại */
+}
+.bottom-banner {
+    position: relative;
+    padding: 100px 100px;
+    /* background-color: #f8f9fa; */
+    text-align: center; /* Căn giữa văn bản */
+}
+
+.banner-text {
+    font-size: 2em; /* Kích thước của văn bản */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white; /* Màu chữ */
+    text-align: center;
+}
+
+.image-darken {
+    position: relative; /* Đặt vị trí tương đối để lớp mờ có thể đặt tương đối so với nó */
+}
+.image-darken::before {
+    content: ""; /* Không có nội dung */
+    position: absolute; /* Đặt vị trí tuyệt đối so với ảnh */
+    top: 0; /* Đặt lớp mờ ở đầu ảnh */
+    bottom: 0; /* Đặt lớp mờ ở cuối ảnh */
+    left: 0; /* Đặt lớp mờ ở bên trái ảnh */
+    right: 0; /* Đặt lớp mờ ở bên phải ảnh */
+    background-color: rgba(0, 0, 0, 0.5); /* Màu của lớp mờ */
+}
+
+h1 {
+    color: wheat; /* Thay đổi màu sắc */
+    font-size: 2.5em; /* Thay đổi kích thước */
+    font-weight: bold; /* Làm đậm chữ */
+    text-shadow: 2px 2px #000; /* Thêm hiệu ứng đổ bóng */
+}
+
+.review .item {
+    border: 1px solid #ddd; /* Thêm đường viền */
+    padding: 15px; /* Thêm padding */
+    background-color: #fff7ec; /* Thêm nền màu nhẹ */
+    margin-bottom: 20px; /* Thêm khoảng cách giữa các đánh giá */
+    border-radius: 5px; /* Làm tròn góc của khung */
+}
+
+.blog .col-md-4 {
+    border: 1px solid #ddd; /* Thêm đường viền */
+    padding: 15px; /* Thêm padding */
+    background-color: #f9f9f9; /* Thêm nền màu nhẹ */
+    margin-bottom: 20px; /* Thêm khoảng cách giữa các blog */
+    border-radius: 5px; /* Làm tròn góc của khung */
+}
