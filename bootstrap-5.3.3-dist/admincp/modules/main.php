@@ -16,8 +16,12 @@
     elseif ($action == 'quanlidanhmucsanpham' && $query == 'sua') {
         include 'quanlidanhmucsp/sua.php';
     }
-    else {
-        include 'dashboard.php';
+    elseif ($action == 'quanlisanpham' && $query == 'them') {
+        include 'quanlisp/them.php';
+        include 'quanlisp/lietke.php';
+    }
+    elseif ($action == 'quanlisanpham' && $query == 'sua') {
+        include 'quanlisp/sua.php';
     }
     ?>
 </div>

@@ -21,6 +21,9 @@
 <body>
     <div class="wrapper">
         <?php
+        include 'admincp/config/config.php';
+        ?>
+        <?php
         include 'pages/menu.php';
         ?>
         <?php

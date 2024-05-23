@@ -13,3 +13,8 @@
 .my_main_banner .bg-primary {
     background-color: lightblue !important;
 }
+.category-item {
+    border: 1px solid #000; /* Đóng khung bằng viền màu đen */
+    margin-right: 10px; /* Cách các mục ra 10px */
+    padding: 5px; /* Thêm đệm bên trong để tạo không gian giữa viền và nội dung */
+}

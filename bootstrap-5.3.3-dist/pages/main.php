@@ -1,114 +1,117 @@
+<?php
 
+
+// Query to get all categories
+$sql_danhmuc = "SELECT * FROM tbl_category";
+$query_danhmuc = mysqli_query($mysqli, $sql_danhmuc);
+?>
+
+<head <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+</head>
+<body>
 <div class="my_main_banner">
-        <div class="row">
-            <div class="col-md-6 p-0 d-flex align-items-center justify-content-center bg-primary text-white">
-                <div class="d-flex justify-content-center flex-column align-items-center">
-                    <h1>Nâng tầm không gian - Tạo nên đẳng cấp</h1>
-                    <p>Khám phá không gian sống mới mẻ và sang trọng với những thiết kế nội thất đương đại, nâng tầm
-                        không gian sống của bạn.</p>
-                    <a href="#" class="btn btn-light mb-4">Mua sắm ngay</a>
-                    <div class="row text-center mt-4">
-                        <div class="col">
-                            <h3>15.000+</h3>
-                            <p>Sản phẩm đa dạng</p>
-                        </div>
-                        <div class="col">
-                            <h3>10+</h3>
-                            <p>Hệ thống cửa hàng</p>
-                        </div>
-                        <div class="col">
-                            <h3>2020+</h3>
-                            <p>Giải thưởng</p>
-                        </div>
+    <div class="row">
+        <div class="col-md-6 p-0 d-flex align-items-center justify-content-center bg-primary text-white">
+            <div class="d-flex justify-content-center flex-column align-items-center">
+                <h1>Nâng tầm không gian - Tạo nên đẳng cấp</h1>
+                <p>Khám phá không gian sống mới mẻ và sang trọng với những thiết kế nội thất đương đại, nâng tầm
+                    không gian sống của bạn.</p>
+                <a href="#" class="btn btn-light mb-4">Mua sắm ngay</a>
+                <div class="row text-center mt-4">
+                    <div class="col">
+                        <h3>15.000+</h3>
+                        <p>Sản phẩm đa dạng</p>
+                    </div>
+                    <div class="col">
+                        <h3>10+</h3>
+                        <p>Hệ thống cửa hàng</p>
+                    </div>
+                    <div class="col">
+                        <h3>2020+</h3>
+                        <p>Giải thưởng</p>
                     </div>
                 </div>
+            </div>
 
-            </div>
-            <div class="col-md-6 p-0 bg-primary">
-                <img src="images/banner_imp.webp" alt="Banner" class="img-fluid w-100">
-            </div>
+        </div>
+        <div class="col-md-6 p-0 bg-primary">
+            <img src="images/banner_imp.webp" alt="Banner" class="img-fluid w-100">
         </div>
     </div>
+</div>
 <section class="featured_products">
     <div class="container">
-        <h2>Sản phẩm nổi bật</h2>
+        <h2>Sản phẩm mới nhất</h2>
         <div class="row">
-            <div class="col-md-3">
-                <div class="product-card">
-                    <img src="images/product/cate_1.webp" alt="Sofa" class="img-fluid">
-                    <h3>SOFA</h3>
-                    <p>Ghế sofa vải và ghế dài</p>
+            <?php
+            $sql_new_product = "SELECT * FROM tbl_product ORDER BY product_id DESC LIMIT 4";
+            $query_new_product = mysqli_query($mysqli, $sql_new_product);
+            while ($row_new_product = mysqli_fetch_array($query_new_product)) {
+            ?>
+                <div class="col-md-3">
+                    <div class="product-card">
+                        <img src="admincp/modules/quanlisp/uploads/<?php echo $row_new_product['product_image'] ?>" alt="Product" class="img-fluid">
+                        <h3><?php echo $row_new_product['product_name'] ?></h3>
+                        <p><?php echo number_format($row_new_product['price']) ?>₫</p>
+                        <button class="btn btn-primary">Thêm vào giỏ</button>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-3">
-                <div class="product-card">
-                    <img src="images/product/cate_2.webp" alt="Sofa" class="img-fluid">
-                    <h3>Cây</h3>
-                    <p>Cây xanh trang trí</p>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="product-card">
-                    <img src="images/product/cate_3.webp" alt="Sofa" class="img-fluid">
-                    <h3>Bàn</h3>
-                    <p>Chất liệu gỗ, nhôm, nhựa</p>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="product-card">
-                    <img src="images/product/giuong.webp" alt="Giường" class="img-fluid">
-                    <h3>Giường</h3>
-                    <p>Giường đa phong cách</p>
-                </div>
-            </div>
+            <?php
+            }
+            ?>
+            
         </div>
     </div>
 </section>
 <section class="collection">
-    <div class="container">
+    <ul class="container">
         <h2 class="block-title position-relative text-center bold mb-3">
             <a title="Bộ sưu tập">Bộ sưu tập</a>
         </h2>
 
         <ul class="tabs tabs-title tab-pc tabtitle ajax clearfix d-flex list-unstyled mb-md-4 mb-3">
-            <li class="tab-link tab_cate px-4 mb-md-2 has-content current" data-tab="tab-1" data-url="/giuong">
-                Giường</li>
-            <li class="tab-link tab_cate px-4 mb-md-2 has-content" data-tab="tab-2" data-url="/tu">Tủ</li>
-            <li class="tab-link tab_cate px-4 mb-md-2 has-content" data-tab="tab-3" data-url="/den">Đèn</li>
-            <li class="tab-link tab_cate px-4 mb-md-2 has-content" data-tab="tab-4" data-url="/cay">Cây</li>
-            <li class="tab-link tab_cate px-4 mb-md-2 has-content" data-tab="tab-5" data-url="/tranh">Tranh</li>
-
+            <?php
+            while ($row_danhmuc = mysqli_fetch_array($query_danhmuc)) {
+            ?>
+                <li class="tab-title-item tab_cate px-4 mb-md-2">
+                    <a href="index.php?id_category=<?php echo $row_danhmuc['id_category'] ?>" class="tab-title-link"><?php echo $row_danhmuc['name_category'] ?></a>
+                </li>
+            <?php
+            }
+            ?>
         </ul>
         <div class="row">
-            <div class="col-md-4">
-                <div class="product-card">
-                    <img src="images/product/giường z-b04.webp" alt="Giường Z-B04" class="img-fluid">
-                    <h3>GIƯỜNG Z-B04</h3>
-                    <p>16.500.000₫</p>
-                    <button class="btn btn-primary">Thêm vào giỏ</button>
+            <?php
+            if (isset($_GET['id_category'])) {
+                $id_category = $_GET['id_category'];
+                $sql_sanpham = "SELECT * FROM tbl_product WHERE id_category='$id_category'";
+            } else {
+                $sql_sanpham = "SELECT * FROM tbl_product";
+            }
+            $query_sanpham = mysqli_query($mysqli, $sql_sanpham);
+            while ($row_sanpham = mysqli_fetch_array($query_sanpham)) {
+            ?>
+                <div class="col-md-3">
+                    <div class="product-card">
+                        <img src="admincp/modules/quanlisp/uploads/<?php echo $row_sanpham['product_image'] ?>" alt="Product 1" class="img-fluid">
+                        <h3><?php echo $row_sanpham['product_name'] ?></h3>
+                        <p><?php echo number_format($row_sanpham['price']) ?>₫</p>
+                        <button class="btn btn-primary">Thêm vào giỏ</button>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="product-card">
-                    <img src="images/product/giường ngủ sắt.webp" alt="Giường ngủ sắt Kim Thành" class="img-fluid">
-                    <h3>Giường ngủ sắt Kim Thành</h3>
-                    <p>2.600.000₫</p>
-                    <button class="btn btn-primary">Thêm vào giỏ</button>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="product-card">
-                    <img src="images/product/giường z-b03.webp" alt="Giường Z-B04" class="img-fluid">
-                    <h3>GIƯỜNG Z-B03</h3>
-                    <p>16.500.000₫</p>
-                    <button class="btn btn-primary">Thêm vào giỏ</button>
-                </div>
-            </div>
+            <?php
+            }
+            ?>
+
         </div>
         <div class="text-center mt-4">
             <a href="#" class="btn btn-dark">Xem thêm</a>
         </div>
-    </div>
+    </ul>
 </section>
 
 <section class="bottom-banner">
@@ -233,3 +236,5 @@
         </div>
     </div>
 </section>
+
+</body>
