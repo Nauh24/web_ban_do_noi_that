@@ -55,7 +55,7 @@
             </div>
             <div class="col-md-2">
                 <div class="d-flex justify-content-end">
-                    <a href="#" class="btn btn-primary mr-3">
+                    <a href="http://localhost/web_ban_do_noi_that/bootstrap-5.3.3-dist/admincp/login.php" class="btn btn-primary mr-3">
                         <i class="fas fa-user"></i>
                     </a>
                     <a href="index.php?quanly=giohang" class="btn btn-primary">
